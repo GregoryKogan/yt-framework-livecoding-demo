@@ -1,0 +1,11 @@
+stages:
+  enabled_stages:
+    - list_s3
+    - load_msvd
+    - build_chatml
+
+pipeline:
+  mode: prod
+  build_folder: //home/visiondata/users/gregorykogan/YT-DEMO/build
+  upload_modules:
+    - chatml

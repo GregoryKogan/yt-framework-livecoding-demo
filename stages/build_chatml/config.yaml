@@ -1,0 +1,22 @@
+job:
+  question: "What is hapenning on this image?"
+  images_bucket: d-gigachat-vision-1
+  images_prefix: users/gregorykogan/YT-DEMO/MSVD/images/v1/
+  json_bucket: d-gigachat-vision-1
+  json_key: users/gregorykogan/YT-DEMO/MSVD/json/v1/MSVD.jsonl
+  image_format: jpg
+  reduce_shard: all
+
+client:
+  operations:
+    map_reduce:
+      input_table: //home/visiondata/users/gregorykogan/YT-DEMO/msvd_s3_joined
+      output_table: //home/visiondata/users/gregorykogan/YT-DEMO/msvd_chatml_conversations
+      reduce_by: [shard]
+      map_job_count: 500
+      tar_command_bootstrap: true
+      max_failed_job_count: 10
+      resources:
+        memory_limit_gb: 8
+        cpu_limit: 2
+        job_count: 1

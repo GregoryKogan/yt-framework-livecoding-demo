@@ -1,0 +1,3 @@
+yt-framework==1.4.1
+Pillow
+opencv-python-headless

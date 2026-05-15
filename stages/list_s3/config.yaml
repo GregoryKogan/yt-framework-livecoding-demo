@@ -1,0 +1,6 @@
+client:
+  input_bucket: d-gigachat-vision-1
+  input_prefix: users/gregorykogan/friedrichor/MSVD/MSVD_Videos/YouTubeClips
+  file_extension: avi
+  output_table: //home/visiondata/users/gregorykogan/YT-DEMO/s3_avi_paths
+  # max_files: 3

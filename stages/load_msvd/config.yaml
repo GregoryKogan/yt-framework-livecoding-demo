@@ -1,0 +1,5 @@
+client:
+  json_s3_uri: s3://d-gigachat-vision-1/users/gregorykogan/friedrichor/MSVD/msvd_train.json
+  output_table: //home/visiondata/users/gregorykogan/YT-DEMO/msvd_train
+  s3_paths_table: //home/visiondata/users/gregorykogan/YT-DEMO/s3_avi_paths
+  joined_table: //home/visiondata/users/gregorykogan/YT-DEMO/msvd_s3_joined
