@@ -6,6 +6,8 @@ Demo pipeline for building **MSVD → ChatML** multimodal training data with **[
 
 This repo walks through a small but realistic data-prep flow: discover videos in S3, join them with MSVD captions on YT, then run a distributed **map-reduce** job that downloads each clip, extracts first/last frames, uploads images to S3, and emits ChatML conversations plus a consolidated NDJSON export.
 
+Captions and videos trace back to the original [MSVD dataset on Hugging Face](https://huggingface.co/datasets/friedrichor/MSVD) (`friedrichor/MSVD`); this pipeline reads a prepared copy from S3 (see **load_msvd** config).
+
 The same stage code runs in **dev** (local JSONL under `.dev/`) and **prod** (YT tables and cluster operations). Prod is the default in [`configs/config.yaml`](configs/config.yaml).
 
 | Stage | What it does |
@@ -114,6 +116,7 @@ pipeline.py        # Entry point
 
 ## Links
 
+- [MSVD (original dataset)](https://huggingface.co/datasets/friedrichor/MSVD) — Hugging Face
 - [YT Framework docs](https://yt-framework.readthedocs.io/)
 - [Map operations](https://yt-framework.readthedocs.io/en/latest/operations/map.html)
 - [YTsaurus](https://ytsaurus.tech/)
